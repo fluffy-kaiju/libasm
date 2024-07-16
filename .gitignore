@@ -1,0 +1,6 @@
+*.exe
+*.o
+*.obj
+*.bc
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#Assembler
