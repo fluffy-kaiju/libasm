@@ -66,12 +66,12 @@ $(ALL_LIB):
 
 # Takes any C/CPP files and transforms into an object into the OBJ_DIR
 $(OBJ_DIR)/%$(OBJ_EXT): %$(CODE_EXT)
-	${CC1} $(FLAGS) -o $@ $<
+	@${CC1} $(FLAGS) -o $@ $<
 	@printf "$(COLOR_RED).$(COLOR_NORMAL)"
 
 # Takes an name of executable and compiles everything into it
 $(NAME): print $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 	@chmod +x $(NAME)
 	@printf "\n"
 

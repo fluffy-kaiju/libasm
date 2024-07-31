@@ -2,5 +2,7 @@
 *.o
 *.obj
 *.bc
+a.out
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Assembler
+libasm.a
