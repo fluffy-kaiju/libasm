@@ -1,18 +1,11 @@
-; https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/
 ; nasm -f elf64 -o main.o main.s && ld -o main main.o && ./main
-global _start
-
+global hello
 section .text
-
-_start:
+hello:
   mov rax, 1        ; write(
   mov rdi, 1        ;   STDOUT_FILENO,
-  mov rsi, msg      ;   "Hello, world!\n",
+  lea rsi, [rel msg]      ;   "Hello, world!\n",
   mov rdx, msglen   ;   sizeof("Hello, world!\n")
-  syscall           ; );
-
-  mov rax, 60       ; exit(
-  mov rdi, 0        ;   EXIT_SUCCESS
   syscall           ; );
 
 section .rodata
